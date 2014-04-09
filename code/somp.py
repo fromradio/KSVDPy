@@ -51,10 +51,18 @@ def main():
 	#dic = np.array([[1,0,0],[0,1,0],[0,0,1]])
 	dic = np.random.rand(100,200)
 	dic /= np.linalg.norm(dic,axis = 0 )
+	alpha = np.random.randint(0,200,10)
+	coord = np.random.rand(10)
+	print alpha
+	c = np.zeros(200)
+	#print c
+	c[alpha]=coord
+	#print c
 	#print "norm of dic is ",np.linalg.norm(dic,axis=0)
 	#vec = np.array([1,0,1])
-	vec = np.random.rand(100)
-	a = somp(vec,dic,99)
+	vec = np.dot(dic,c)
+	print vec.shape
+	a = somp(vec,dic,20)
 	print a
 
 if __name__ == '__main__':
